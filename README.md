@@ -12,8 +12,8 @@ In order for this application to work, it requires more than the normal amount o
 2. Make sure to install the appropriate gems
 
 ```shell
-gem install bundler
-bundle install
+    gem install bundler
+    bundle install
 ```
 
 3. Add a host definition for the domain (this is important, the domain is significant to this app)
