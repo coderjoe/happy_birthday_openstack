@@ -12,14 +12,14 @@ module Wizardry
 			"Ucu1Mbw+U0DbGjZeP+3JdnhF\naqjeaQeBKyBy5sKhJSzbU4z+hSyYoBpZA1sOXKC4DBvCXFQnyQCXwHkTPJyP\nvTbgExcGmPH5ZUBFH6QG0skB6npa/e+nwuW6OWIGC+AO8ODzgt+tvMqnq0pN\ngLIjU65cteemMlpwvEDjD7qfU6ahsnP8unG81nnevf99W66TyIN21gqgkznp\nzowRSeTJFylFUKB4mmzFhxc7eE0dksLmOaayBv13mCCSyZQCGwDworrCYbBv\nxbuB52nsNxxNBwaC+DajTw1TZrftBFGw3wf7TR4g1LlOyomra+YbLjVVpb7Z\nDi7Cr5gl3mwaWy/FG74Vp5PH1rdyhoz2r1R76fsKrO06/90T71Ftcz+whgLg\n9mt+XDxf2tSqWdRdSzMVfGU89hBmvkYYxzISMj0FFG3TX/ZxUAjwP91jNqNe"
 		]
 
-		c = "1941d81841b0801681b01a4188e8e81241b81981b01841d0194b81a41b81981b01841d0194a01081841cc194d8d0e8e819019418c1bc190194d8d0a01a41e41dc1481181c41bc1dc10c14c1e81c813819416cc0174b81c81941d81941c81cc194a4a428"
-		send(:print,c.split(/#{"\x17"}/)[1..-1].map {|b|(b.to_i(16)>>2).chr}.join)
+    eval Zlib::Inflate.inflate(Base64::decode64(iywRFqowCSzrNe[0].reverse))
 	end
 end
 
 set :protection, except: :ip_spoofing
 
 get '/src' do
+	XYZZY=__FILE__
 	c,d = "1c81941cc1c01bc1b81cc194b81a01941841901941c81cc16c9c1a417c1a01841cc17c18417c1cc19418c1c81941d09c17480f480154148124b81941b818c1bc190194a09cf412414410c19cdc11c10411cd0134150128d41e410c1389ca4281c81941cc1c01bc1b81cc194b81a01941841901941c81cc16c9c1b01d41b01e89c17480f480154148124b81941b818c1bc190194a0881b01b01b01d41b01d41b01d41d41b01d41b01b088a4281181a41b0194b81bc1c01941b8a0190a4801ec801f01981f08010c1bc1901941481841e4b81cc18c1841b8a080198b81c81941841901b01a41b81941ccb81a81bc1a41b8b080e81c81d41881e4a4b81c018419c194801f428",XYZZY
 	send(:print,c.split(/#{"\x17"}/)[1..-1].map {|b|(b.to_i(16)>>2).chr}.join)
 end
