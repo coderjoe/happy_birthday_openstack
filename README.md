@@ -25,7 +25,7 @@ In order for this application to work, it requires more than the normal amount o
 4.  Start it up!
 
     ```bash
-    ruby app.rb
+    bundle exec ruby app.rb
     ```
 
 5.  Visit http://j0lwtfrjhuyqw:4567/src in your browser of choice
