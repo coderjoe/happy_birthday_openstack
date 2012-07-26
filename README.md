@@ -11,7 +11,7 @@ In order for this application to work, it requires more than the normal amount o
 1. You need to make sure to have the correct version of Ruby installed
 2. Make sure to install the appropriate gems
 
-```ruby
+```shell
 gem install bundler
 bundle install
 ```
