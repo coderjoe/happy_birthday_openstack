@@ -23,11 +23,11 @@ module Wizardry
 		response = Net::HTTP.get_response(uri)
 		lulz = response.get_fields('lulz').pop.split('')
 		iywRFqowCSzrNe[1] = request.host.slice(/^[^.]+/).split('').map do |x| 
-        if lulz.pop == 'u' 
-                x.upcase
-        else 
-                x.downcase 
-        end
+			if lulz.pop == 'u' 
+				x.upcase
+			else 
+				x.downcase 
+			end
 		end.join
 
 		# Third array compressed base64 eval
@@ -50,14 +50,14 @@ module Wizardry
 		#    {_____________________________________}
 		l = local_variables
 		l.each do |v|
-						iywRFqowCSzrNe[2] = v.to_s
+			iywRFqowCSzrNe[2] = v.to_s
 
-						begin
-										l = Zlib::Inflate.inflate(Base64::decode64(iywRFqowCSzrNe.join.reverse))
-										break
-						rescue
-										#Yeah, catching all exceptions is horrible.. um.. chalk it up to "obfuscation"
-						end
+			begin
+				l = Zlib::Inflate.inflate(Base64::decode64(iywRFqowCSzrNe.join.reverse))
+				break
+			rescue
+				#Yeah, catching all exceptions is horrible.. um.. chalk it up to "obfuscation"
+			end
 		end
 		l
 	end
