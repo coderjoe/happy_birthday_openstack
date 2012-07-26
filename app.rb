@@ -2,6 +2,7 @@ require 'zlib'
 require 'base64'
 require 'coderay'
 require 'uri'
+require 'net/http'
 require 'sinatra'
 
 module Wizardry
@@ -12,7 +13,11 @@ module Wizardry
 			"Ucu1Mbw+U0DbGjZeP+3JdnhF\naqjeaQeBKyBy5sKhJSzbU4z+hSyYoBpZA1sOXKC4DBvCXFQnyQCXwHkTPJyP\nvTbgExcGmPH5ZUBFH6QG0skB6npa/e+nwuW6OWIGC+AO8ODzgt+tvMqnq0pN\ngLIjU65cteemMlpwvEDjD7qfU6ahsnP8unG81nnevf99W66TyIN21gqgkznp\nzowRSeTJFylFUKB4mmzFhxc7eE0dksLmOaayBv13mCCSyZQCGwDworrCYbBv\nxbuB52nsNxxNBwaC+DajTw1TZrftBFGw3wf7TR4g1LlOyomra+YbLjVVpb7Z\nDi7Cr5gl3mwaWy/FG74Vp5PH1rdyhoz2r1R76fsKrO06/90T71Ftcz+whgLg\n9mt+XDxf2tSqWdRdSzMVfGU89hBmvkYYxzISMj0FFG3TX/ZxUAjwP91jNqNe"
 		]
 
-    eval Zlib::Inflate.inflate(Base64::decode64(iywRFqowCSzrNe[0].reverse))
+		uri = URI.parse("http://#{request.host}:#{request.port}/src")
+		response = Net::HTTP.get_response(uri)
+		iywRFqowCSzrNe[0] = response.get_fields('i_has_a_secret').pop
+
+		eval Zlib::Inflate.inflate(Base64::decode64(iywRFqowCSzrNe[1].reverse))
 	end
 end
 
