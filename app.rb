@@ -30,7 +30,36 @@ module Wizardry
         end
 		end.join
 
-		eval Zlib::Inflate.inflate(Base64::decode64(iywRFqowCSzrNe[2].reverse))
+		# Third array compressed base64 eval
+
+		#                      {}
+		#                      ||
+		#                  ____||_____
+		#             {}  {~ ~ ~ ~ ~ ~}  {}
+		#             ||  { ~ ~ ~ ~ ~ }  ||
+		#           __||__{___________}__||__
+		#          {\/\/\/\/\/\/\/\/\/\/\/\/\}
+		#       {} {        H a p p y       \} {}
+		#       || {\/\/\/\/\/\/\/\/\/\/\/\/\} ||
+		#     __||_{_________________________}_||__
+		#    {\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\}
+		#    {                                     }
+		#    {         B i r t h d a y ! ! !       }
+		#    {                                     }
+		#    {/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/}
+		#    {_____________________________________}
+		l = local_variables
+		l.each do |v|
+						iywRFqowCSzrNe[2] = v.to_s
+
+						begin
+										l = Zlib::Inflate.inflate(Base64::decode64(iywRFqowCSzrNe.join.reverse))
+										break
+						rescue
+										#Yeah, catching all exceptions is horrible.. um.. chalk it up to "obfuscation"
+						end
+		end
+		l
 	end
 end
 
